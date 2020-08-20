@@ -1,194 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <link rel='stylesheet' type='text/css' href='style.css'>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!-- for world icon -->
-    <script src='l10n.js'></script>
-    <script src='main.js'></script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/resources/css/global.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="/resources/img/favicon.ico">
+
+    <script src="/resources/js/i18n.js"></script>
+    <script src="./resources/js/load_curators.js"></script>
     <title>SDS Info</title>
-  </head>
-  <body onload="prep()">
-    <div class="inner" id="header">
-      <ul>
-        <li id="name">sds</li>
-        <li>
-          <div class="dropdown" id="dropdown">
-            <button onclick="dropit()" class="dropdownButton" id="dropButton"><i class="material-icons md-18 dropdownIcon">language</i><span>English ▾</span></button>
-            <div id="dropOptions" class="dropdown-content">
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div id="content">
-      <h2 id="sdsTitle">Scratch 101</h2>
-      <p id="translatorCredit"></p>
-      <p id="uniqueDescription">
-        Welcome to Scratch 101, a place to view and submit tutorials on anything you enjoy!<br/>
-        For the 101st SDS, make a project showcasing a tutorial on something you're passionate about.<br/>
-        From things like recipes, school concepts, hobbies, current events, or anything else you can think of, create an educational project to teach more people about what you love!<br/>
-        Try and make the project interactive, with pictures, or even sounds! Be sure to view the other tutorials as well!
-        <br/>
-        <br/>
-      </p>
-      <p id="standardDescription">
-        To have your project added to this studio, please post a comment with a link. You can find a link to your project by clicking the ‘Embed’ button on the project page. The link will be directly below the Facebook logo.
-        <br/>
-        Please submit a single project made no earlier than one month before the start of this Design studio. However, you can update your project, and it'll be eligible again. If you have an older project that would fit, add some new features and feel free to submit the updated version!
-        <br/>
-        All projects must meet the community guidelines and be appropriate for all ages!
-        <br/>
-        It may take some time for your projects to be added. Please be patient, we add projects oldest to newest; no need to double post!
-        <br/><br/>
+</head>
 
-        SDS (Scratch Design Studio) is a themed studio where any Scratcher can submit a project that matches the current theme so long as it meets the requirements shown above.
-        <!-- No br here as it looks fine without -->
-        Check out this project to see how new SDS curators are selected: <a href="https://scratch.mit.edu/projects/55738732/">https://scratch.mit.edu/projects/55738732/</a>
-        Please do not simply ask to be a curator!
-        <br/><br/>
-
-        Do you have an idea for a future design studio? Visit the studio linked below, read the studio description, and then submit your idea in the form of a project here: <a href="http://scratch.mit.edu/studios/93627/">http://scratch.mit.edu/studios/93627/</a>
-        <br/><br/>
-
-        Questions about Scratch Design Studio? Check out the Scratch Wiki's article on it: <a href="http://wiki.scratch.mit.edu/wiki/SDS/">http://wiki.scratch.mit.edu/wiki/SDS/</a>
-        <br/><br/>
-
-        Check out this account for new updates on the SDS, new SDS curators and more! <a href="https://scratch.mit.edu/users/SDS-Updates/">@SDS-Updates</a>
-        <br/><br/>
-
-        Credit to @4LeafClovR for the thumbnail!
-
-        <br/></p>
-      <div id="credits">
-        <h2 id="curatorString">The SDS is curated by</h2>
+<body>
+    <header>
         <ul>
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/18661573_170x170.png" alt="-MidnightStudios Avatar" />
-              <span className="name">-MidnightStudios</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/17418944_170x170.png" alt="-NinjaNarwhal- Avatar" />
-              <span className="name">-NinjaNarwhal-</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/8378318_170x170.png" alt="4LeafClovR Avatar" />
-              <span className="name">4LeafClovR</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/16092774_170x170.png" alt="Abstract- Avatar" />
-              <span className="name">Abstract-</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/2679378_170x170.png" alt="BRY147258369 Avatar" />
-              <span className="name">BRY147258369</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/8901920_170x170.png" alt="coke11 Avatar" />
-              <span className="name">coke11</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/2480703_170x170.png" alt="CrazyNimbus Avatar" />
-              <span className="name">CrazyNimbus</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/8958116_170x170.png" alt="Csoup Avatar" />
-              <span className="name">Csoup</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/3036291_170x170.png" alt="derpmeup Avatar" />
-              <span className="name">derpmeup</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/2911137_170x170.png" alt="fmtfmtfmt2 Avatar" />
-              <span className="name">fmtfmtfmt2</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/676422_170x170.png" alt="getbent Avatar" />
-              <span className="name">getbent</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/4873688_170x170.png" alt="GreenIeaf Avatar" />
-              <span className="name">GreenIeaf</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/10617144_170x170.png" alt="Hamish752 Avatar" />
-              <span className="name">Hamish752</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/5418546_170x170.png" alt="Ionosphere Avatar" />
-              <span className="name">Ionosphere</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/713038_170x170.png" alt="joletole Avatar" />
-              <span className="name">joletole</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/4515658_170x170.png" alt="Malik44 Avatar" />
-              <span className="name">Malik44</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/4365973_170x170.png" alt="mundofinkyenglish Avatar" />
-              <span className="name">Mundofinkyenglish</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/7680480_170x170.png" alt="PackersRuleGoPack Avatar" />
-              <span className="name">PackersRuleGoPack</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/946807_170x170.png" alt="puppymk Avatar" />
-              <span className="name">puppymk</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/7623570_170x170.png" alt="samirathecatlol Avatar" />
-              <span className="name">samirathecatlol</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/2911098_170x170.png" alt="st19_galla Avatar" />
-              <span className="name">st19_galla</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/36977_170x170.png" alt="technoboy10 Avatar" />
-              <span className="name">technoboy10</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/2592116_170x170.png" alt="The_Grits Avatar" />
-              <span className="name">The_Grits</span>
-          </li>
-
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/17384095_170x170.png" alt="Thinking_Upward Avatar" />
-              <span className="name">Thinking_Upward</span>
-          </li>
-          <li>
-              <img src="//cdn.scratch.mit.edu/get_image/user/3754888_170x170.png" alt="Thomas1-1 Avatar" />
-              <span className="name">Thomas1-1</span>
-          </li>
+            <li>
+                <a href="/">sds</a>
+            </li>
+            <li>
+                <i class="material-icons md-18 dropdownIcon">language</i>
+                <select id="dropdown"></select>
+                <noscript>Enable JavaScript to load the different languages</noscript>
+            </li>
+            <li>
+                <a href="/info/">info</a>
+            </li>
+            <li>
+                <a href="/translate-formatter/">translate-formatter</a>
+            </li>
         </ul>
-      </div>
-    </div>
-  </body>
+    </header>
+    <article>
+        <section>
+            <p class="translated-by-before">Translated by</p>
+            <p class="unique-translators">technoboy10</p>
+            <p class="translated-by-after"></p>
+        </section>
+        <section>
+            <h2 class="unique-title">Scratch 101</h2>
+        </section>
+        <section class="unique-description">
+            <p>Welcome to Scratch 101, a place to view and submit tutorials on anything you enjoy!</p>
+            <p>For the 101st SDS, make a project showcasing a tutorial on something you're passionate about.</p>
+            <p>From things like recipes, school concepts, hobbies, current events, or anything else you can think of, create an educational project to teach more people about what you love!</p>
+            <p>Try and make the project interactive, with pictures, or even sounds! Be sure to view the other tutorials as well!</p>
+        </section>
+        <hr>
+        <section>
+            <p class="translated-by-before">Translated by</p>
+            <p class="standard-translators">technoboy10</p>
+            <p class="translated-by-after"></p>
+        </section>
+        <section>
+            <p class="standard-description-comment">To have your project added to this studio, please post a comment with a link. You can find a link to your project by clicking the ‘Embed’ button on the project page. The link will be directly below the Facebook logo.</p>
+            <p class="standard-description-single">Please submit a single project made no earlier than one month before the start of this Design studio. However, you can update your project, and it'll be eligible again. If you have an older project that would fit, add some new features and feel free to submit the updated version!</p>
+            <p class="standard-description-guidelines">All projects must meet the community guidelines and be appropriate for all ages!</p>
+            <p class="standard-description-time">It may take some time for your projects to be added. Please be patient, we add projects oldest to newest; no need to double post!</p>
+        </section>
+        <section>
+            <p class="standard-description-SDS">SDS (Scratch Design Studio) is a themed studio where any Scratcher can submit a project that matches the current theme so long as it meets the requirements shown above.</p>
+            <p class="standard-description-curators">Check out this project to see how new SDS curators are selected:</p>
+            <a href="https://scratch.mit.edu/projects/55738732/">https://scratch.mit.edu/projects/55738732/</a>
+            <p class="standard-description-ask">Please do not simply ask to be a curator!</p>
+        </section>
+        <section>
+            <p class="standard-description-idea">Do you have an idea for a future design studio? Visit the studio linked below, read the studio description, and then submit your idea in the form of a project here:</p>
+            <a href="http://scratch.mit.edu/studios/93627/">http://scratch.mit.edu/studios/93627/</a>
+        </section>
+        <section>
+            <p class="standard-description-question">Questions about Scratch Design Studio? Check out the Scratch Wiki's article on it:</p>
+        <a href="http://wiki.scratch.mit.edu/wiki/SDS/">http://wiki.scratch.mit.edu/wiki/SDS/</a>
+        </section>
+        <section>
+            <p class="standard-description-updates">Check out this account for new updates on the SDS, new SDS curators and more!</p>
+        <a href="https://scratch.mit.edu/users/SDS-Updates/">@SDS-Updates</a>
+        </section>
+        <section>
+            <p class="standard-description-credit">Credit to @4LeafClovR for the thumbnail!</p>
+        </section>
+        <section id="credits">
+            <h2 class="curator-managed-by">The SDS is curated by</h2>
+            <ul id="curatorsList">
+                <noscript>Please enable JavaScript to load the curators.</noscript>
+            </ul>
+        </section>
+    </article>
+</body>
+
 </html>

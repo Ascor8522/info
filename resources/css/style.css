@@ -1,0 +1,61 @@
+article>section>h2#sdsTitle {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+
+article>section>p {
+    margin: 0px;
+    line-height: 1.5rem;
+    display: inline-block;
+}
+
+article>section#credits {
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+article>section#credits>h2 {
+    text-align: center;
+}
+
+article>section#credits>ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+article>section#credits>ul>li {
+    display: inline-block;
+    margin: 10px 0;
+    width: 188px;
+    text-align: center;
+}
+
+article>section#credits>ul>li>a {
+    color: var(--ui-green);
+}
+
+article>section#credits>ul>li>a:hover {
+    color: var(--ui-green-hover);
+}
+
+article>section#credits>ul>li>a:active {
+    color: var(--ui-green-active);
+}
+
+article>section#credits>ul>li>a>img {
+    margin: 10px 23px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: var(--ui-gray);
+    background-color: var(--ui-white);
+    padding: 20px;
+    width: 85px;
+    height: 85px;
+}
